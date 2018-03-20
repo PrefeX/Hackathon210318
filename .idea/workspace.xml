@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="gs-spring-boot:war exploded" />
+      <artifact name="gs-spring-boot:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -439,12 +439,12 @@
       <updated>1521558400030</updated>
       <workItem from="1521558405900" duration="1994000" />
       <workItem from="1521560493987" duration="4005000" />
-      <workItem from="1521574529604" duration="6027000" />
+      <workItem from="1521574529604" duration="6161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14332000" />
+    <option name="totallyTimeSpent" value="14466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
