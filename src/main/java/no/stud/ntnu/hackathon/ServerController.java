@@ -6,7 +6,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class serverController {
+public class ServerController {
+
+    @GetMapping("/")
+    public String index() {
+        return "hello";
+    }
 
     @GetMapping("/greeting")
     public String greetingForm(Model model) {
