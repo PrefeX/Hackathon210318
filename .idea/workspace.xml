@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="gs-spring-boot:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3cf1bfca-458a-4e9c-abd2-600902ee4b64" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/serverController.java" afterPath="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/ServerController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/hello.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/hello.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/ServerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#316#317#0" expanded="true" />
@@ -50,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hello.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hello.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/hello.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="170">
+              <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -74,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/result.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+              <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -84,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/greeting.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="72" />
+              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -119,7 +121,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HackathonApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HackathonApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/HackathonApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -214,64 +216,6 @@
               <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hackathon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hackathon210318" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hackathon210318" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -282,7 +226,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitProsjekter/JavaRelatert/gs-rest-service" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -451,12 +395,12 @@
       <updated>1521558400030</updated>
       <workItem from="1521558405900" duration="1994000" />
       <workItem from="1521560493987" duration="4005000" />
-      <workItem from="1521574529604" duration="3750000" />
+      <workItem from="1521574529604" duration="4182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12055000" />
+    <option name="totallyTimeSpent" value="12487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -814,7 +758,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/result.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -844,14 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/HackathonApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -863,7 +799,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/ServerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#316#317#0" expanded="true" />
@@ -893,15 +829,23 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/greeting.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="72" />
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/hello.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        <state relative-caret-position="170">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/HackathonApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -911,6 +855,32 @@
     <states>
       <state key="ArquillianSettingsConfigurable.UI">
         <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>gs-spring-boot:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -933,11 +903,24 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>9.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>gs-spring-boot</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -957,6 +940,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
