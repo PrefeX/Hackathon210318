@@ -11,6 +11,17 @@ public class RoomController {
     public void addRoom(String name, String description) {
         rooms.add(new Room(name, description));
     }
+    
+    public void addTempSensorToRoom(String roomName, String sensorName){
+        getRoomFromName(roomName).addTempSensor(new TempSensor(sensorName));
+    }
+    public void addProxSensorToRoom(String roomName, String sensorName){
+        getRoomFromName(roomName).addProxSensor(new ProxSensor(sensorName));
+    }
+    public void addTouchSensorToRoom(String roomName, String sensorName){
+        getRoomFromName(roomName).addTouchSensor(new TouchSensor(sensorName));
+    }
+    
 
     public Room getRoomFromName(String name) {
         for(Room room : rooms) {
