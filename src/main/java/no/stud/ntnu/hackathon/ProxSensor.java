@@ -14,19 +14,11 @@ import org.json.JSONObject;
  */
 public class ProxSensor extends Sensor{
     
-    private JSONObject JSONObject;
-    
     public ProxSensor(String sensorName) {
         super(sensorName);
-        
-        try {
-            this.JSONObject = super.getData();
-        } catch (IOException ex) {
-        }
-        System.out.println(getObjectPresent());
     }
     public String getObjectPresent(){
-        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject objectPresent = reported.getJSONObject("objectPresent");
         return objectPresent.getString("state");
