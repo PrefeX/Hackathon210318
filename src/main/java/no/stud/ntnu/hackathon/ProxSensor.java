@@ -12,6 +12,7 @@ import org.json.JSONObject;
  *
  * @author Andreas
  */
+<<<<<<< HEAD
 public class ProxSensor extends Sensor {
 
     private JSONObject JSONObject;
@@ -27,6 +28,15 @@ public class ProxSensor extends Sensor {
 
     public String getObjectPresent() {
         JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+=======
+public class ProxSensor extends Sensor{
+    
+    public ProxSensor(String sensorName) {
+        super(sensorName);
+    }
+    public String getObjectPresent(){
+        JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
+>>>>>>> origin/olav
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject objectPresent = reported.getJSONObject("objectPresent");
         return objectPresent.getString("state");

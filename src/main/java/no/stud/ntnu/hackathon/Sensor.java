@@ -29,6 +29,7 @@ public class Sensor extends Thread {
     private final String apiDeviceUrl = apiUrlBase + "/projects/" + projectId + "/devices";
     private final String codeExampleSensorDisplayName;
     private String urlString;
+    protected JSONObject jsonObject;
     
     public Sensor(String sensorName) {
         this.codeExampleSensorDisplayName = sensorName;
@@ -36,7 +37,17 @@ public class Sensor extends Thread {
             urlString = (apiDeviceUrl + "?label_filters=" + URLEncoder.encode("name=" + codeExampleSensorDisplayName, "UTF-8"));
         } catch (UnsupportedEncodingException ex) {
         }
+        updateData();
     }
+
+    public void updateData() {
+        try {
+            jsonObject = getData();
+        } catch (IOException ex) {
+            System.out.println("Failed to get update data");
+        }
+    }
+
     public JSONObject getData() throws MalformedURLException, IOException{
         URL url = new URL(this.urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();

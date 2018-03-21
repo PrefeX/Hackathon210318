@@ -14,29 +14,23 @@ import org.json.JSONObject;
  */
 public class TempSensor extends Sensor{
 
-    private JSONObject JSONObject;
-
     public TempSensor(String sensorName) {
         super(sensorName);
-        try {
-            this.JSONObject = super.getData();
-        } catch (IOException ex) {
-        }
     }
     public Double getTemperature(){
-        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject temperature = reported.getJSONObject("temperature");
         return temperature.getDouble("value");
     }
     public int getSignalStrength(){
-        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject networkStatus = reported.getJSONObject("networkStatus");
         return networkStatus.getInt("signalStrength");
     }
     public int getBatteryStatus() {
-        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject batteryStatus = reported.getJSONObject("batteryStatus");
         return batteryStatus.getInt("percentage");
