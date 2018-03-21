@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.getsensordata;
+package no.stud.ntnu.hackathon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,16 +22,7 @@ import org.json.JSONString;
  *
  * @author Andreas
  */
-public class testsensordata {
-
-    public static void main(String args[]) {
-        try {
-            testsensordata test = new testsensordata();
-        } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(testsensordata.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
+public class SensorData {
 
     private String serviceAccountKey = "banmjq324te000b24ubg";
     private String serviceAccountSecret = "03ac12bfc30047d5b7bba0cbb4d36c1f";
@@ -41,16 +32,16 @@ public class testsensordata {
     private String codeExampleSensorDisplayName = "Team 1 Prox";
 
 
-    public testsensordata() throws UnsupportedEncodingException {
+    public SensorData() throws UnsupportedEncodingException {
         try {
             String response = get(apiDeviceUrl + "?label_filters=" + URLEncoder.encode("name=" + codeExampleSensorDisplayName, "UTF-8"));
             System.out.println(response);
             JSONObject tempJSON = new JSONObject(response);
             
             JSONObject devices = (JSONObject) tempJSON.getJSONArray("devices").get(0);
-            System.out.println(devices.getString("type"));
+            System.out.println(devices.getString("name"));
         } catch (IOException ex) {
-            Logger.getLogger(testsensordata.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SensorData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     private String get(String urlString) throws MalformedURLException, IOException{

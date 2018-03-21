@@ -7,6 +7,10 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @Configuration
 @ComponentScan
 @SpringBootApplication
@@ -18,6 +22,11 @@ public class HackathonApplication extends SpringBootServletInitializer {
 	}
 
 	public static void main(String[] args) {
+		try {
+			SensorData test = new SensorData();
+		} catch (UnsupportedEncodingException ex) {
+			Logger.getLogger(SensorData.class.getName()).log(Level.SEVERE, null, ex);
+		}
 		SpringApplication.run(HackathonApplication.class, args);
 	}
 }
