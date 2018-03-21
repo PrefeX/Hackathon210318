@@ -40,6 +40,10 @@ public class Sensor extends Thread {
         updateData();
     }
 
+    public String getSensorName() {
+        return codeExampleSensorDisplayName;
+    }
+
     public void updateData() {
         try {
             jsonObject = getData();
