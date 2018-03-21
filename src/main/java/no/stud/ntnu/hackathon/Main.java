@@ -14,7 +14,5 @@ public class Main {
         TempSensor tempSensor = new TempSensor("Team 1 Temp");
         ProxSensor proxSensor = new ProxSensor("Team 1 Prox");
         TouchSensor touchSensor = new TouchSensor("Team 1 Touch");
-        System.out.println(touchSensor.getBatteryStatus());
-        System.out.println(touchSensor.getSignalStrength());
     }
 }

@@ -17,7 +17,7 @@ public class TouchSensor extends Sensor {
         JSONObject reported = device.getJSONObject("reported");
         JSONObject touch = reported.getJSONObject("touch");
         String updateTime = touch.getString("updateTime");
-
+        super.setUpdateTime(updateTime);
         result = updateTime;
 
         //return json.toString();

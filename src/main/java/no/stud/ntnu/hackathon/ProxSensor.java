@@ -21,6 +21,7 @@ public class ProxSensor extends Sensor{
         JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject objectPresent = reported.getJSONObject("objectPresent");
+        super.setUpdateTime(objectPresent.getString("updateTime"));
         return objectPresent.getString("state");
     }
 

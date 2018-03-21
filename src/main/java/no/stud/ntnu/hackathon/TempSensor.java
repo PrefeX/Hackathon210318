@@ -21,6 +21,7 @@ public class TempSensor extends Sensor{
         JSONObject devices = (JSONObject) super.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject temperature = reported.getJSONObject("temperature");
+        super.setUpdateTime(temperature.getString("updateTime"));
         return temperature.getDouble("value");
     }
     public int getSignalStrength(){
