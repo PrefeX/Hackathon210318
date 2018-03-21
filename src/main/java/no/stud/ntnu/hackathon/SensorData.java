@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.getsensordata;
+package no.stud.ntnu.hackathon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,31 +16,35 @@ import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONObject;
+import org.json.JSONString;
 
 /**
  *
  * @author Andreas
  */
-public class TempSensor {
+public class SensorData {
 
     private String serviceAccountKey = "banmjq324te000b24ubg";
     private String serviceAccountSecret = "03ac12bfc30047d5b7bba0cbb4d36c1f";
     private String projectId = "baj44uni50gg00dhk030";
     private String apiUrlBase = "https://api.disruptive-technologies.com/v2beta1";
     private String apiDeviceUrl = apiUrlBase + "/projects/" + projectId + "/devices";
-    private String codeExampleSensorDisplayName = "Team 1 Temp";
-    private JSONObject JSONObject;
+    private String codeExampleSensorDisplayName = "Team 1 Prox";
 
-    public TempSensor() {
 
+    public SensorData() throws UnsupportedEncodingException {
         try {
-            this.JSONObject = getJSONObject(update(apiDeviceUrl + "?label_filters=" + URLEncoder.encode("name=" + codeExampleSensorDisplayName, "UTF-8"));
-        } catch (Exception ex) {
+            String response = get(apiDeviceUrl + "?label_filters=" + URLEncoder.encode("name=" + codeExampleSensorDisplayName, "UTF-8"));
+            System.out.println(response);
+            JSONObject tempJSON = new JSONObject(response);
+            
+            JSONObject devices = (JSONObject) tempJSON.getJSONArray("devices").get(0);
+            System.out.println(devices.getString("name"));
+        } catch (IOException ex) {
+            Logger.getLogger(SensorData.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
-    private String update(String urlString) throws MalformedURLException, IOException {
+    private String get(String urlString) throws MalformedURLException, IOException{
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         String userpass = serviceAccountKey + ":" + serviceAccountSecret;
@@ -57,12 +61,7 @@ public class TempSensor {
         conn.disconnect();
         return response;
     }
-
-    public JSONObject getJSONObject(String string) {
+    private JSONObject parse(JSONString string){
         return new JSONObject(string);
-    }
-
-    public String getSensorType() {
-
     }
 }

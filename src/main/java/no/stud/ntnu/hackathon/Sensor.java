@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.getsensordata;
+package no.stud.ntnu.hackathon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,37 +16,28 @@ import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONObject;
-import org.json.JSONString;
 
 /**
  *
  * @author Andreas
  */
-public class testsensordata {
-
-
-
-    private String serviceAccountKey = "banmjq324te000b24ubg";
-    private String serviceAccountSecret = "03ac12bfc30047d5b7bba0cbb4d36c1f";
-    private String projectId = "baj44uni50gg00dhk030";
-    private String apiUrlBase = "https://api.disruptive-technologies.com/v2beta1";
-    private String apiDeviceUrl = apiUrlBase + "/projects/" + projectId + "/devices";
-    private String codeExampleSensorDisplayName = "Team 1 Prox";
-
-
-    public testsensordata() throws UnsupportedEncodingException {
+public class Sensor extends Thread {
+    private final String serviceAccountKey = "banmjq324te000b24ubg";
+    private final String serviceAccountSecret = "03ac12bfc30047d5b7bba0cbb4d36c1f";
+    private final String projectId = "baj44uni50gg00dhk030";
+    private final String apiUrlBase = "https://api.disruptive-technologies.com/v2beta1";
+    private final String apiDeviceUrl = apiUrlBase + "/projects/" + projectId + "/devices";
+    private final String codeExampleSensorDisplayName;
+    private String urlString;
+    
+    public Sensor(String sensorName) {
+        this.codeExampleSensorDisplayName = sensorName;
         try {
-            String response = get(apiDeviceUrl + "?label_filters=" + URLEncoder.encode("name=" + codeExampleSensorDisplayName, "UTF-8"));
-            System.out.println(response);
-            JSONObject tempJSON = new JSONObject(response);
-            
-            JSONObject devices = (JSONObject) tempJSON.getJSONArray("devices").get(0);
-            System.out.println(devices.getString("type"));
-        } catch (IOException ex) {
-            Logger.getLogger(testsensordata.class.getName()).log(Level.SEVERE, null, ex);
+            urlString = (apiDeviceUrl + "?label_filters=" + URLEncoder.encode("name=" + codeExampleSensorDisplayName, "UTF-8"));
+        } catch (UnsupportedEncodingException ex) {
         }
     }
-    private String get(String urlString) throws MalformedURLException, IOException{
+    public JSONObject getData(String urlString) throws MalformedURLException, IOException{
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         String userpass = serviceAccountKey + ":" + serviceAccountSecret;
@@ -61,13 +52,8 @@ public class testsensordata {
         BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
         String response = br.readLine();
         conn.disconnect();
-        return response;
+        return new JSONObject(response);
     }
-    private JSONObject parse(JSONString string){
-        return new JSONObject(string);
-    }
-    /*    private String subscribe(String){
-    
-    return null;
-    }*/
+    //TODO: method for streaming sensordata
 }
+    
