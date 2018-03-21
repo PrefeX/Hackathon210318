@@ -19,13 +19,14 @@ public class TempSensor extends Sensor{
     public TempSensor(String sensorName) {
         super(sensorName);
         try {
-            this.JSONObject = super.getData(sensorName);
+            this.JSONObject = super.getData();
         } catch (IOException ex) {
         }
     }
     public String getTemperature(){
-        
-        return null;
+        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject temperature = devices.getJSONObject("temperature");
+        return temperature.getString("value");
     }
     
 

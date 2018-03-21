@@ -37,8 +37,8 @@ public class Sensor extends Thread {
         } catch (UnsupportedEncodingException ex) {
         }
     }
-    public JSONObject getData(String urlString) throws MalformedURLException, IOException{
-        URL url = new URL(urlString);
+    public JSONObject getData() throws MalformedURLException, IOException{
+        URL url = new URL(this.urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         String userpass = serviceAccountKey + ":" + serviceAccountSecret;
         String basicAuth = "Basic " + javax.xml.bind.DatatypeConverter.printBase64Binary(userpass.getBytes());
