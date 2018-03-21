@@ -27,6 +27,6 @@ public class HackathonApplication extends SpringBootServletInitializer {
 		} catch (UnsupportedEncodingException ex) {
 			Logger.getLogger(SensorData.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		SpringApplication.run(HackathonApplication.class, args);
+		//SpringApplication.run(HackathonApplication.class, args);
 	}
 }
