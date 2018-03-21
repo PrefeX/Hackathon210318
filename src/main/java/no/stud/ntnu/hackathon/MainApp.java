@@ -10,12 +10,13 @@ import java.util.concurrent.TimeUnit;
 public class MainApp {
 
     private ArrayList<Sensor> sensors;
+    public static RoomController roomController;
 
     public MainApp(String[] args) {
 
         SpringApplication.run(HackathonApplication.class, args);
 
-        RoomController roomController = new RoomController();
+        roomController = new RoomController();
         sensors = new ArrayList<>();
 
         roomController.addRoom("room", "Best room available");
