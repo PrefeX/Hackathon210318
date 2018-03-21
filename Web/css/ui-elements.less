@@ -1,0 +1,607 @@
+
+//---------------------------------------------------
+// UI elements - Button
+//---------------------------------------------------
+button,
+.btn-flat,
+.btn-green,
+.btn-orange,
+.btn-red,
+.btn-teal,
+.btn-clean,
+.btn-themed,
+.btn-disabled {
+    display: inline-block;
+    color: @color-background !important;
+    background-color: @color-font-light;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: .2s;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+    padding: .5em 1em;
+    border-style: outset;
+    border: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    box-shadow: 2px 2px 5px @color-font-light;
+    text-align: center;
+    //font-size: 100%;
+    &:hover {
+        background-color: @color-font;
+    }
+    &.btn-xxsmall {
+        font-size: 55%;
+    }
+    &.btn-xsmall {
+        font-size: 70%;
+    }
+    &.btn-small {
+        font-size: 85%;
+    }
+    &.btn-large {
+        font-size: 115%;
+    }
+    &.btn-xlarge {
+        font-size: 130%;
+    }
+    &.btn-xxlarge {
+        font-size: 145%;
+    }
+    &.btn-flat {
+        box-shadow: none;
+    }
+}
+
+button:disabled,
+.btn-disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button:active:not(:disabled),
+.btn-green:active,
+.btn-orange:active,
+.btn-red:active,
+.btn-teal:active,
+.btn-clean:active,
+.btn-themed:active {
+    &:active {
+        background-color: @color-background-dark;
+        color: @color-font !important;
+    }
+}
+
+.btn-themed {
+    background-color: @color-primary;
+    &:hover {
+        background-color: @color-primary-dark
+    }
+}
+
+.btn-red {
+    background-color: @color-red;
+    &:hover {
+        background-color: @color-red-dark
+    }
+}
+
+.btn-green {
+    background-color: @color-green;
+    &:hover {
+        background-color: @color-green-dark
+    }
+}
+
+.btn-orange {
+    background-color: @color-orange;
+    &:hover {
+        background-color: @color-orange-dark
+    }
+}
+
+.btn-teal {
+    background-color: @color-teal;
+    &:hover {
+        background-color: @color-teal-dark
+    }
+}
+
+
+//---------------------------------------------------
+// UI elements - Input
+//---------------------------------------------------
+input,
+.input-check,
+.input-clean,
+.input-green,
+.input-red,
+.input-themed {
+    display: inline-block;
+    background-color: @color-background;
+    color: @color-font;
+    border: 3px solid @color-font;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    padding: .5em 1em;
+    margin: 0.5em 0;
+    outline: none;
+    transition: .2s;
+    box-shadow: 2px 2px 5px @color-font-light;
+    &:hover,
+    &:focus {
+        color: @color-font-dark;
+        border-color: @color-font-dark;
+        background-color: rgba(red(@color-font), green(@color-font), blue(@color-font), 0.1);
+    }
+    &[disabled] {
+        color: @color-font-dark;
+        border-color: @color-font-dark;
+        background-color: rgba(red(@color-font), green(@color-font), blue(@color-font), 0.1);
+    }
+}
+
+.input-red,
+.input-check:not([value=""]):not(:focus):invalid {
+    color: @color-red;
+    border-color: @color-red;
+    &:hover,
+    &:focus {
+        color: @color-red-dark;
+        border-color: @color-red-dark;
+        background-color: rgba(red(@color-red), green(@color-red), blue(@color-red), 0.1);
+    }
+    &[disabled] {
+        color: @color-red-dark;
+        border-color: @color-red-dark;
+        background-color: rgba(red(@color-red), green(@color-red), blue(@color-red), 0.1);
+    }
+}
+
+.input-green,
+.input-check:not([value=""]):not(:focus):valid {
+    color: @color-green;
+    border: 3px solid @color-green;
+    &:hover,
+    &:focus {
+        color: @color-green-dark;
+        border-color: @color-green-dark;
+        background-color: rgba(red(@color-green), green(@color-green), blue(@color-green), 0.1);
+    }
+    &[disabled] {
+        color: @color-green-dark;
+        border-color: @color-green-dark;
+        background-color: rgba(red(@color-green), green(@color-green), blue(@color-green), 0.1);
+    }
+}
+
+.input-themed {
+    color: @color-primary;
+    border: 3px solid @color-primary;
+    &:hover,
+    &:focus {
+        color: @color-primary-dark;
+        border-color: @color-primary-dark;
+        background-color: rgba(red(@color-primary), green(@color-primary), blue(@color-primary), 0.1);
+    }
+    &[disabled] {
+        color: @color-primary-dark;
+        border-color: @color-primary-dark;
+        background-color: rgba(red(@color-primary), green(@color-primary), blue(@color-primary), 0.1);
+    }
+}
+
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 10px auto;
+    .track-mixin() {
+        width: inherit;
+        height: 5px;
+        background: @color-background;
+        border: none;
+        border-radius: 3px;
+    }
+    .thumb-mixin() {
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: @color-primary;
+    }
+    &::-webkit-slider-runnable-track {
+        .track-mixin;
+    }
+    &::-webkit-slider-thumb {
+        .thumb-mixin;
+        -webkit-appearance: none;
+        margin-top: -5px;
+    }
+    &::-moz-range-track {
+        .track-mixin;
+    }
+    &::-moz-range-thumb {
+        .thumb-mixin;
+    }
+    /*&:-moz-focusring {
+        outline: 1px solid white;
+        outline-offset: -1px;
+    }*/
+    /*&::-moz-range-progress {
+        .track-mixin;
+        //background: @color-font-light;
+    }*/
+    &::-ms-track {
+        width: inherit;
+        height: 5px;
+        /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+        background: transparent;
+        /*leave room for the larger thumb to overflow with a transparent border */
+        border-color: transparent;
+        border-width: 6px 0;
+        /*remove default tick marks*/
+        color: transparent;
+    }
+    &::-ms-fill-lower {
+        .track-mixin;
+        //background: @color-font-light;
+    }
+    &::-ms-fill-upper {
+        .track-mixin;
+        //background: @color-background;
+    }
+    &::-ms-thumb {
+        .thumb-mixin;
+    }
+}
+
+//---------------------------------------------------
+// UI elements - Progressbar
+//---------------------------------------------------
+.progressbar-clean,
+.progressbar-red,
+.progressbar-green,
+.progressbar-orange,
+.progressbar-teal,
+.progressbar-themed {
+    display: inline-block;
+    background-color: @color-font-light;
+    height: 25px;
+    line-height: 25px;
+    padding: 5px;
+    width: 350px;
+    margin: 0.5em 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border-radius: 5px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px @color-font-dark inset, 0 1px 0 @color-font-light;
+    span {
+        display: inline-block;
+        height: 100%;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding-left: 3px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+        transition: width .4s ease-in-out;
+        background-color: @color-background;
+        color: @color-font;
+        background: linear-gradient(@color-background, @color-background-dark);
+    }
+}
+
+.progressbar-red span,
+.progressbar-green span,
+.progressbar-teal span,
+.progressbar-orange span,
+.progressbar-themed span {
+    color: @color-background;
+}
+
+.progressbar-themed span {
+    background-color: @color-primary;
+    background: linear-gradient(@color-primary, @color-primary-dark);
+}
+
+.progressbar-red span {
+    background-color: @color-red;
+    background: linear-gradient(@color-red, @color-red-dark);
+}
+
+.progressbar-teal span {
+    background-color: @color-teal;
+    background: linear-gradient(@color-teal, @color-teal-dark);
+}
+
+.progressbar-green span {
+    background-color: @color-green;
+    background: linear-gradient(@color-green, @color-green-dark);
+}
+
+.progressbar-orange span {
+    background-color: @color-orange;
+    background: linear-gradient(@color-orange, @color-orange-dark);
+}
+
+// Everything between this and the next section is under development!
+.stripes span {
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%, transparent 75%, transparent);
+    animation: animate-stripes 3s linear infinite;
+    &::before {
+        background-size: 30px 30px;
+        background-image: linear-gradient(135deg, rgba(255, 255, 255, .05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, .05) 75%, transparent 75%, transparent);
+        animation: animate-stripes 3s linear infinite;
+    }
+}
+
+@keyframes animate-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 60px 0;
+    }
+}
+
+//---------------------------------------------------
+// UI elements - Blockquote
+//---------------------------------------------------
+blockquote {
+    display: block;
+    background: @color-background-light;
+    padding: 15px 20px 15px 45px;
+    margin: 0 0 20px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: justify;
+    border-left: 15px solid @color-primary;
+    border-right: 2px solid @color-primary;
+    box-shadow: 2px 2px 15px @color-font-light;
+    &::before,
+    &::after {
+        font-family: Georgia, serif;
+        font-size: 60px;
+        font-weight: bold;
+        color: @color-background-dark;
+        position: absolute;
+    }
+    &::before {
+        content: "\201C";
+        /*line-height: 35px;*/
+        left: 10px;
+        top: -4px;
+    }
+    &::after {
+        /*content: "\201D";*/
+        content: "";
+        line-height: 10px;
+        right: 8px;
+        bottom: 0px;
+    }
+    a {
+        text-decoration: none;
+        background: @color-background;
+        cursor: pointer;
+        padding: 0 3px;
+        color: @color-primary;
+    }
+    a:hover {
+        color: @color-primary-dark;
+    }
+    em {
+        font-style: italic;
+    }
+}
+
+//---------------------------------------------------
+// UI elements - Table
+//---------------------------------------------------
+table {
+    background: @color-background;
+    border-radius: 10px;
+    border-collapse: collapse;
+    /*max-width: 600px;*/
+    /*width: 100%;*/
+    max-width: 100%;
+    padding: 5px;
+    box-shadow: 2px 2px 15px @color-font-light;
+    th {
+        color: @color-background;
+        background: @color-font-dark;
+        border-bottom: 4px solid @color-primary-light;
+        border-right: 1px solid @color-font-light;
+        padding: 15px;
+        text-align: left;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        vertical-align: middle;
+    }
+    th:first-child {
+        border-top-left-radius: 10px;
+    }
+    th:last-child {
+        border-top-right-radius: 10px;
+        border-right: none;
+    }
+    tr {
+        border-top: 1px solid @color-font-light;
+        border-bottom: 1px solid @color-font-light;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+        //transition: .2s;
+    }
+    tr:hover td,
+    tr:nth-child(odd):hover td {
+        background: @color-font-light;
+        color: @color-background;
+        //transition: .2s;
+    }
+    tr:first-child {
+        border-top: none;
+    }
+    tr:last-child {
+        border-bottom: none;
+    }
+    tr:nth-child(odd) td {
+        background: @color-background;
+    }
+    tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+    tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+    td {
+        background: @color-background-light;
+        padding: 10px 15px;
+        vertical-align: middle;
+        font-size: 18px;
+        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+        border-right: 1px solid @color-font-light;
+        transition: background .2s, color .2s;
+    }
+    td:last-child {
+        border-right: 0px;
+    }
+}
+
+//---------------------------------------------------
+// UI elements - Misc
+//---------------------------------------------------
+hr {
+    display: block;
+    border: 1px inset @color-background;
+    margin: 1em auto;
+}
+
+aside hr {
+    border: 1px outset @color-font-dark;
+}
+
+hr.one {
+    border: 0;
+    height: 0;
+    //border-top: 1px solid rgba(0, 0, 0, 0.3);
+    //border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(red(@color-font), green(@color-font), blue(@color-font), 0.1);
+    border-bottom: 1px solid rgba(red(@color-font), green(@color-font), blue(@color-font), 0.7);
+}
+
+hr.fancy-hr {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: #c5c3c3;
+    -webkit-box-shadow: 2px 0px 20px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 2px 0px 20px rgba(50, 50, 50, 0.75);
+    box-shadow: 2px 0px 20px rgba(50, 50, 50, 0.75);
+}
+
+hr.twoo {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+hr.two {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+hr.three {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+hr.four {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+em {
+    font-style: italic;
+}
+
+mark {
+    text-decoration: none;
+    background: @color-background-dark;
+    padding: 0 3px;
+    a {
+        color: @color-primary;
+        cursor: pointer;
+    }
+    a:hover {
+        color: @color-primary-dark;
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+abbr {
+    cursor: help;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+kbd {
+    color: #444;
+    line-height: 2.5em;
+    cursor: pointer;
+    padding: 0.35em 0.9em 0.55em 0.5em;
+    margin: 0.15em;
+    white-space: nowrap;
+    background-color: #E5E5E5;
+    border-top: solid 0.1em #CCC;
+    border-right: solid 0.2em #AAA;
+    border-bottom: solid 0.3em #999;
+    border-left: solid 0.2em #BBB;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &:hover {
+        color: #222;
+        background-color: #EFEFEF;
+    }
+    &:active,
+    &.selected {
+        border-top: solid 0.2em #999;
+        border-right: solid 0.2em #BBB;
+        border-bottom: solid 0.2em #CCC;
+        border-left: solid 0.2em #AAA;
+    }
+    img {
+        padding-left: 0.25em;
+        vertical-align: middle;
+        height: 22px;
+        width: 22px;
+        opacity: 0.8;
+    }
+    &:hover img {
+        opacity: 1;
+    }
+}
