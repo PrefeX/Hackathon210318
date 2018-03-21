@@ -11,11 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ServerController {
 
-    @GetMapping("/")
-    public String index() {
-        return "hello";
-    }
-
     @GetMapping("/greeting")
     public String greetingForm(Model model) {
         model.addAttribute("greeting", new Greeting());
