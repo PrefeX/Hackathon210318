@@ -23,8 +23,8 @@ public class HackathonApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
 
-        TempSensor tempSensor = new TempSensor("Team 1 Temp");
-        System.out.println(tempSensor.getTemperature());
+        TouchSensor touchSensor = new TouchSensor("Team 1 Touch");
+        System.out.println(touchSensor.getTouch());
 
         //SpringApplication.run(HackathonApplication.class, args);
     }
