@@ -686,6 +686,20 @@ kbd img {
 kbd:hover img {
   opacity: 1;
 }
+.container {
+  background-color: black;
+}
+.row {
+  background-color: red;
+}
+.padding-10 {
+  padding: 10px;
+}
+.room-image img {
+  object-fit: cover !important;
+  width: 100%;
+  height: 100%;
+}
 /*
 @media print {
     main > aside,

@@ -22,6 +22,7 @@ public class MainApp {
         roomController.addRoom("room", "Best room available");
 
         roomController.getRoomFromName("room").addTempSensor(new TempSensor("Team 1 Temp"));
+        roomController.getRoomFromName("room").addTempSensor(new TempSensor("Team 1 Temp 2"));
         roomController.getRoomFromName("room").addTouchSensor(new TouchSensor("Team 1 Touch"));
         roomController.getRoomFromName("room").addProxSensor(new ProxSensor("Team 1 Prox"));
 
