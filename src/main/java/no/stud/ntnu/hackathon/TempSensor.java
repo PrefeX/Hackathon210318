@@ -7,6 +7,7 @@ package no.stud.ntnu.hackathon;
 
 import java.io.IOException;
 import org.json.JSONObject;
+import org.json.JSONString;
 
 /**
  *
@@ -23,10 +24,17 @@ public class TempSensor extends Sensor{
         } catch (IOException ex) {
         }
     }
-    public String getTemperature(){
+    public Double getTemperature(){
         JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
-        JSONObject temperature = devices.getJSONObject("temperature");
-        return temperature.getString("value");
+        JSONObject reported = devices.getJSONObject("reported");
+        JSONObject temperature = reported.getJSONObject("temperature");
+        return temperature.getDouble("value");
+    }
+    public int getSignalStrength(){
+        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject reported = devices.getJSONObject("reported");
+        JSONObject networkStatus = reported.getJSONObject("networkStatus");
+        return networkStatus.getInt("signalStrength");
     }
     
 
