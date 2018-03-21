@@ -30,6 +30,7 @@ public class Sensor extends Thread {
     private final String codeExampleSensorDisplayName;
     private String urlString;
     protected JSONObject jsonObject;
+    private String updateTime;
     
     public Sensor(String sensorName) {
         this.codeExampleSensorDisplayName = sensorName;
@@ -50,6 +51,13 @@ public class Sensor extends Thread {
         } catch (IOException ex) {
             System.out.println("Failed to get update data");
         }
+        
+    }
+    public void setUpdateTime(String updateTime){
+        this.updateTime = updateTime;
+    }
+    public String getUpdateTime(){
+        return this.updateTime;
     }
 
     public JSONObject getData() throws MalformedURLException, IOException{
