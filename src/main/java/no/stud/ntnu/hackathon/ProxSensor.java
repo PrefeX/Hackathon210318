@@ -32,13 +32,13 @@ public class ProxSensor extends Sensor{
 
     }
     public int getSignalStrength(){
-        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject devices = (JSONObject) this.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject networkStatus = reported.getJSONObject("networkStatus");
         return networkStatus.getInt("signalStrength");
     }
     public int getBatteryStatus() {
-        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject devices = (JSONObject) this.jsonObject.getJSONArray("devices").get(0);
         JSONObject reported = devices.getJSONObject("reported");
         JSONObject batteryStatus = reported.getJSONObject("batteryStatus");
         return batteryStatus.getInt("percentage");
