@@ -6,6 +6,18 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<p th:text="${roomController.getRoomFromName('room').getRoomStatus()}"></p>
+<p th:text="${roomController.getRoomFromName('room').getTempSensors()}"></p>
+
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>IN STOCK</th>
+    </tr>
+    <tr th:each="sens : ${roomController.getRoomFromName('room').getTempSensors()}">
+        <td th:text="${sens.getName()}">Onions</td>
+        <td th:text="${sens.getTemperature()}">2.41</td>
+    </tr>
+</table>
 </body>
 </html>
