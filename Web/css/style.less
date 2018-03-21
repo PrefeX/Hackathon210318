@@ -1,0 +1,107 @@
+@import "variables.less";
+
+
+//---------------------------------------------------
+// User Variables
+//---------------------------------------------------
+
+@color-primary: @color-teal;
+
+
+//---------------------------------------------------
+// Fixed Variables, don't change!
+//---------------------------------------------------
+
+@color-primary-light: lighten(@color-primary, 10%);
+@color-primary-dark: darken(@color-primary, 10%);
+
+
+//---------------------------------------------------
+// Generic settings, fixes & overrides
+//---------------------------------------------------
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    max-width: 100vw;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: @color-font;
+}
+
+header,
+main {
+    background: @color-background;
+}
+
+ ::-webkit-input-placeholder {
+    color: inherit;
+}
+
+ ::-moz-placeholder {
+    color: inherit;
+}
+
+ :-ms-input-placeholder {
+    color: inherit;
+}
+
+ :-moz-placeholder {
+    color: inherit;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lora', serif;
+}
+
+@import "ui-elements.less";
+
+
+//---------------------------------------------------
+// START OF CODE
+//---------------------------------------------------
+
+
+
+
+//---------------------------------------------------
+// END OF CODE
+//---------------------------------------------------
+
+/*
+@media print {
+    main > aside,
+    footer,
+    header,
+    .toTop {
+        visibility: hidden;
+        display: none;
+    }
+    main {
+        background: none;
+        box-shadow: none;
+    }
+    main > section {
+        flex: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+}
+*/

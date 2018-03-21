@@ -36,9 +36,4 @@ public class TempSensor extends Sensor{
         JSONObject batteryStatus = reported.getJSONObject("batteryStatus");
         return batteryStatus.getInt("percentage");
     }
-    
-    
-    
-
-
 }

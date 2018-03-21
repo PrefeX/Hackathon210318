@@ -20,16 +20,4 @@ public class HackathonApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(HackathonApplication.class);
     }
-
-    public static void main(String[] args) {
-
-        TouchSensor touchSensor = new TouchSensor("Team 1 Touch");
-        System.out.println(touchSensor.getTouch());
-        TempSensor tempSensor = new TempSensor("Team 1 Temp");
-        System.out.println(tempSensor.getTemperature());
-		ProxSensor proxSensor = new ProxSensor("Team 1 Prox");
-		System.out.println(proxSensor.getObjectPresent());
-
-        //SpringApplication.run(HackathonApplication.class, args);
-    }
 }
