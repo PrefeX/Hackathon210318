@@ -25,6 +25,12 @@ public class ServerController {
         return "roomController";
     }
 
+    @GetMapping("/conferenceRooms")
+    public String conferenceRoom(Model model) {
+        model.addAttribute("conferenceRooms", roomController);
+        return "conferenceRooms";
+    }
+
     @PostMapping("/greeting")
     public String greetingSubmit(@ModelAttribute Greeting greeting) {
         return "result";

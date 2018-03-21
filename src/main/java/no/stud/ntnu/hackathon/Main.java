@@ -13,6 +13,5 @@ public class Main {
     public static void main(String[] args) {
         TempSensor tempSensor = new TempSensor("Team 1 Temp");
         ProxSensor proxSensor = new ProxSensor("Team 1 Prox");
-
     }
 }
