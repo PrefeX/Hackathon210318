@@ -7,7 +7,6 @@ package no.stud.ntnu.hackathon;
 
 import java.io.IOException;
 import org.json.JSONObject;
-import org.json.JSONString;
 
 /**
  *
@@ -30,6 +29,14 @@ public class TempSensor extends Sensor{
         JSONObject networkStatus = reported.getJSONObject("networkStatus");
         return networkStatus.getInt("signalStrength");
     }
+    public int getBatteryStatus() {
+        JSONObject devices = (JSONObject) this.JSONObject.getJSONArray("devices").get(0);
+        JSONObject reported = devices.getJSONObject("reported");
+        JSONObject batteryStatus = reported.getJSONObject("batteryStatus");
+        return batteryStatus.getInt("percentage");
+    }
+    
+    
     
 
 
