@@ -16,17 +16,16 @@ import java.util.logging.Logger;
 @SpringBootApplication
 public class HackathonApplication extends SpringBootServletInitializer {
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(HackathonApplication.class);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(HackathonApplication.class);
+    }
 
-	public static void main(String[] args) {
-		try {
-			SensorData test = new SensorData();
-		} catch (UnsupportedEncodingException ex) {
-			Logger.getLogger(SensorData.class.getName()).log(Level.SEVERE, null, ex);
-		}
-		SpringApplication.run(HackathonApplication.class, args);
-	}
+    public static void main(String[] args) {
+
+        TempSensor tempSensor = new TempSensor("Team 1 Temp");
+        System.out.println(tempSensor.getTemperature());
+
+        //SpringApplication.run(HackathonApplication.class, args);
+    }
 }
