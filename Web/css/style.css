@@ -721,6 +721,9 @@ kbd:hover img {
 .small-content {
   font-size: small;
 }
+.buttonHeight button {
+  min-height: 200px;
+}
 /*
 @media print {
     main > aside,
