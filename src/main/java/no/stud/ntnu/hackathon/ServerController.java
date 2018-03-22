@@ -30,10 +30,10 @@ public class ServerController {
         model.addAttribute("conferenceRooms", roomController);
         return "conferenceRooms";
     }
-    @GetMapping("/yolo")
+    @GetMapping("/index")
     public String yolo(Model model) {
-        model.addAttribute("yolo", roomController);
-        return "yolo";
+        model.addAttribute("index", roomController);
+        return "index";
     }
 
     @PostMapping("/greeting")
