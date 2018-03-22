@@ -7,10 +7,12 @@
     <title>Welcome to room manager 3000!</title>
     <link rel="shortcut icon" type="image/png" th:href="@{image/Rooms.png}"/>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-    <link rel="stylesheet" type="text/css" th:href="@{css/style.less}" />
-    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.less}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+          integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway:300|Lora|Ubuntu" rel="stylesheet"/>
 </head>
 <body>
@@ -19,7 +21,7 @@
 </header>
 
 <main class="container-fluid">
-    <table width="100%">
+    <table width="100%" th:unless="${conferenceRooms.getAvailableRooms().isEmpty()}">
         <thead>
         <tr>
             <th class="text-left">Tilgjengelige konferanserom</th>
@@ -27,7 +29,7 @@
         </thead>
         <tbody>
 
-        <tr th:each="room : ${conferenceRooms.getRooms()}">
+        <tr th:each="room : ${conferenceRooms.getAvailableRooms()}">
             <td class="text-left">
                 <section class="row">
                     <div class="col-sm-2 image-scale">
@@ -35,16 +37,49 @@
                     </div>
 
                     <div class="col-sm-8">
-                        <h3>Aksla Konferanserom: <span class="availible">Ledig</span></h3>
-                        Ledige plasser: 10 av 10
+                        <h3>
+                            <div th:text="${room.getName()}"></div>
+                            <span class="availible">Ledig</span>
+                        </h3>
+                        <p th:text="'Ledige plasser: ' + ${room.getAvailableChairs()} + ' av ' + ${room.getTotalChairs()}"></p>
                         <br/>Neste reservasjon: 18:00
                         <br/>Fasiliteter:
                         <ul class="small-content">
-                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Prosjektor</li>
-                            <li><span class="availible" th:text="${room.getHasProjector()}">&#10004;</span> Monitor</li>
-                            <li><span class="availible" th:text="${room.getHasProjector()}">&#10004;</span> Konferanseutstyr</li>
-                            <li><span class="unavailible" th:text="${room.getHasProjector()}">&#10008;</span> Telefon</li>
-                            <li><span class="availible" th:text="${room.getHasProjector()}">&#10004;</span> Whiteboard</li>
+
+                            <li th:if="${room.getHasProjector()}">
+                                <span class="availible">&#10004;</span> Prosjektor
+                            </li>
+                            <li th:unless="${room.getHasProjector()}">
+                                <span class="unavailible">&#10008;</span> Prosjektor
+                            </li>
+
+                            <li th:if="${room.getHasMonitor()}">
+                                <span class="availible">&#10004;</span> Monitor
+                            </li>
+                            <li th:unless="${room.getHasMonitor()}">
+                                <span class="unavailible">&#10008;</span> Monitor
+                            </li>
+
+                            <li th:if="${room.getHasConferenceEquipment()}">
+                                <span class="availible">&#10004;</span> Konferanseutstyr
+                            </li>
+                            <li th:unless="${room.getHasConferenceEquipment()}">
+                                <span class="unavailible">&#10008;</span> Konferanseutstyr
+                            </li>
+
+                            <li th:if="${room.getHasPhone()}">
+                                <span class="availible">&#10004;</span> Telefon
+                            </li>
+                            <li th:unless="${room.getHasPhone()}">
+                                <span class="unavailible">&#10008;</span> Telefon
+                            </li>
+
+                            <li th:if="${room.getHasWhiteboard()}">
+                                <span class="availible">&#10004;</span> Whiteboard
+                            </li>
+                            <li th:unless="${room.getHasWhiteboard()}">
+                                <span class="unavailible">&#10008;</span> Whiteboard
+                            </li>
                         </ul>
                         <button class="btn-themed">Reserver rom</button>
                     </div>
@@ -53,10 +88,13 @@
         </tr>
         </tbody>
     </table>
+    <div width="100%" th:if="${conferenceRooms.getAvailableRooms().isEmpty()}">
+        There is no unavailable rooms
+    </div>
 
     <br/>
 
-    <table width="100%">
+    <table width="100%" th:unless="${conferenceRooms.getUnavailableRooms().isEmpty()}">
         <thead>
         <tr>
             <th class="text-left">Opptatte konferanserom</th>
@@ -64,7 +102,7 @@
         </thead>
         <tbody>
 
-        <tr th:each="room : ${conferenceRooms.getRooms()}">
+        <tr th:each="room : ${conferenceRooms.getUnavailableRooms()}">
             <td class="text-left">
                 <section class="row">
                     <div class="col-sm-2 image-scale">
@@ -72,16 +110,49 @@
                     </div>
 
                     <div class="col-sm-8">
-                        <h3>Aksla Konferanserom: <span class="availible">Ledig</span></h3>
-                        Ledige plasser: 10 av 10
+                        <h3>
+                            <div th:text="${room.getName()}"></div>
+                            <span class="unavailible">Opptatt</span>
+                        </h3>
+                        <p th:text="'Ledige plasser: ' + ${room.getAvailableChairs()} + ' av ' + ${room.getTotalChairs()}"></p>
                         <br/>Neste reservasjon: 18:00
                         <br/>Fasiliteter:
                         <ul class="small-content">
-                            <li><span class="availible" th:text="${room.getHasProjector()}"></span>Prosjektor</li>
-                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Monitor</li>
-                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Konferanseutstyr</li>
-                            <li><span class="unavailible" th:text="${room.getHasProjector()}"></span> Telefon</li>
-                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Whiteboard</li>
+
+                            <li th:if="${room.getHasProjector()}">
+                                <span class="availible">&#10004;</span> Prosjektor
+                            </li>
+                            <li th:unless="${room.getHasProjector()}">
+                                <span class="unavailible">&#10008;</span> Prosjektor
+                            </li>
+
+                            <li th:if="${room.getHasMonitor()}">
+                                <span class="availible">&#10004;</span> Monitor
+                            </li>
+                            <li th:unless="${room.getHasMonitor()}">
+                                <span class="unavailible">&#10008;</span> Monitor
+                            </li>
+
+                            <li th:if="${room.getHasConferenceEquipment()}">
+                                <span class="availible">&#10004;</span> Konferanseutstyr
+                            </li>
+                            <li th:unless="${room.getHasConferenceEquipment()}">
+                                <span class="unavailible">&#10008;</span> Konferanseutstyr
+                            </li>
+
+                            <li th:if="${room.getHasPhone()}">
+                                <span class="availible">&#10004;</span> Telefon
+                            </li>
+                            <li th:unless="${room.getHasPhone()}">
+                                <span class="unavailible">&#10008;</span> Telefon
+                            </li>
+
+                            <li th:if="${room.getHasWhiteboard()}">
+                                <span class="availible">&#10004;</span> Whiteboard
+                            </li>
+                            <li th:unless="${room.getHasWhiteboard()}">
+                                <span class="unavailible">&#10008;</span> Whiteboard
+                            </li>
                         </ul>
                         <button class="btn-themed">Reserver rom</button>
                     </div>
@@ -90,15 +161,37 @@
         </tr>
         </tbody>
     </table>
+    <table width="100%" th:if="${conferenceRooms.getUnavailableRooms().isEmpty()}">
+        <thead>
+        <tr>
+            <th class="text-left">Opptatte konferanserom</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td class="text-left">
+                No Rooms
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </main>
 
-
-
+<footer class="padding-10">
+    &copy; 2018 Team-1
+</footer>
 
 <!-- START: Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 <!-- END: Bootstrap JS -->
 </body>
 </html>

@@ -25,7 +25,7 @@ public class MainApp {
         roomController.addTempSensorToRoom("room", "Team 1 Temp 2");
         roomController.addTouchSensorToRoom("room", "Team 1 Touch");
         roomController.addProxSensorToRoom("room", "Team 1 Prox");
-        roomController.addProxSensorToRoom("room", "Team 1 Prox 2");
+        roomController.addProxSensorToRoom("room2", "Team 1 Prox 2");
 
         while(true) {
             updateAllTempSensors(roomController.getRoomFromName("room").getTempSensors());

@@ -26,7 +26,7 @@ public class ProxSensor extends Sensor{
     }
 
     public boolean getStateAsBoolean() {
-        if ("NOT_PRESENT" == getObjectPresent()) {
+        if ("NOT_PRESENT".equals(getObjectPresent())) {
             return false;
         }
         return true;

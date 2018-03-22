@@ -13,7 +13,7 @@ public class Room {
     private boolean hasConferenceEquipment;
     private boolean hasPhone;
     private boolean hasWhiteboard;
-    private String roomPicture = "/rooms/placeholder.png";
+    private String roomPicture = "image/pexels-photo-306198.jpeg";
     private String floorPlanDrawing = "/rooms/placeholder.png";
 
     public Room (String name, String description) {
@@ -22,13 +22,27 @@ public class Room {
 
         hasProjector = false;
         hasMonitor = false;
-        hasConferenceEquipment = false;
+        hasConferenceEquipment = true;
         hasPhone = false;
         hasWhiteboard = false;
 
         tempSensors = new HashSet<>();
         touchSensors = new HashSet<>();
         proxSensors = new HashSet<>();
+    }
+
+    public int getTotalChairs() {
+        return proxSensors.size();
+    }
+
+    public int getAvailableChairs() {
+        int result = 0;
+        for (ProxSensor proxSensor : proxSensors) {
+            if(!proxSensor.getStateAsBoolean()) {
+                result++;
+            }
+        }
+        return result;
     }
 
     public String getName() {
@@ -47,44 +61,24 @@ public class Room {
         this.floorPlanDrawing = location;
     }
 
-    public String getHasProjector() {
-        if(hasProjector) {
-            return "✔";
-        } else {
-            return "✘";
-        }
+    public boolean getHasProjector() {
+        return hasProjector;
     }
 
-    public String getHasMonitor() {
-        if(hasProjector) {
-            return "✔";
-        } else {
-            return "✘";
-        }
+    public boolean getHasMonitor() {
+        return hasMonitor;
     }
 
-    public String getHasConferenceEquipment() {
-        if(hasProjector) {
-            return "&#10004;";
-        } else {
-            return "&#10008;";
-        }
+    public boolean getHasConferenceEquipment() {
+        return hasConferenceEquipment;
     }
 
-    public String getHasPhone() {
-        if(hasProjector) {
-            return "&#10004;";
-        } else {
-            return "&#10008;";
-        }
+    public boolean getHasPhone() {
+        return hasPhone;
     }
 
-    public String getHasWhiteboard() {
-        if(hasProjector) {
-            return "&#10004;";
-        } else {
-            return "&#10008;";
-        }
+    public boolean getHasWhiteboard() {
+        return hasWhiteboard;
     }
 
     public void addTempSensor(TempSensor sensor) {
@@ -110,8 +104,9 @@ public class Room {
     }
     public boolean isAvailable(){
         for (ProxSensor proxSensor : proxSensors) {
-            if (proxSensor.getStateAsBoolean())
+            if (proxSensor.getStateAsBoolean()) {
                 return false;
+            }
         }
         return true;
     }
