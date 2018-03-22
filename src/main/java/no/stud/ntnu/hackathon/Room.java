@@ -13,6 +13,8 @@ public class Room {
     private boolean hasConferenceEquipment;
     private boolean hasPhone;
     private boolean hasWhiteboard;
+    private String roomPicture = "/rooms/placeholder.png";
+    private String floorPlanDrawing = "/rooms/placeholder.png";
 
     public Room (String name, String description) {
         this.name = name;
@@ -31,6 +33,18 @@ public class Room {
 
     public String getName() {
         return name;
+    }
+    public String getRoomPicture(){
+        return this.roomPicture;
+    }
+    public void setRoomPicture(String location){
+        this.roomPicture = location;
+    }
+    public String getFloorPlanDrawing(){
+        return this.floorPlanDrawing;
+    }
+    public void setFloorPlanDrawing(String location){
+        this.floorPlanDrawing = location;
     }
 
     public String getHasProjector() {
@@ -113,6 +127,16 @@ public class Room {
         for(ProxSensor proxs: proxSensors) {
             result += "status on " + proxs.getSensorName() + ": " + proxs.getObjectPresent() + "\n";
         }
+        return result;
+    }
+    public int getNumberOfAvailableChairs(){
+        int result = 0;
+        result = proxSensors.stream().filter((proxSensor) -> (proxSensor.getStateAsBoolean())).map((_item) -> 1).reduce(result, Integer::sum);
+        return result;
+    }
+    public int getNumberOfChairs(){
+        int result = 0;
+        result = proxSensors.stream().map((_item) -> 1).reduce(result, Integer::sum);
         return result;
     }
 
