@@ -21,6 +21,20 @@ public class RoomController {
     public void addTouchSensorToRoom(String roomName, String sensorName){
         getRoomFromName(roomName).addTouchSensor(new TouchSensor(sensorName));
     }
+    public ArrayList<Room> getAvailableRooms(){
+        ArrayList<Room> availableRooms = new ArrayList<>();
+        this.rooms.stream().filter((room) -> (room.isAvailable())).forEachOrdered((room) -> {
+            availableRooms.add(room);
+        });
+        return availableRooms;
+    }
+    public ArrayList<Room> getUnavailableRooms(){
+        ArrayList<Room> unavailableRooms = new ArrayList<>();
+        this.rooms.stream().filter((room) -> (!room.isAvailable())).forEachOrdered((room) -> {
+            unavailableRooms.add(room);
+        });
+        return unavailableRooms;
+    }
 
     public ArrayList<Room> getRooms() {
         return rooms;

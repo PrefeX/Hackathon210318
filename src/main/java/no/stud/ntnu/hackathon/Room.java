@@ -94,6 +94,13 @@ public class Room {
     public HashSet<ProxSensor> getProxSensors() {
         return proxSensors;
     }
+    public boolean isAvailable(){
+        for (ProxSensor proxSensor : proxSensors) {
+            if (proxSensor.getStateAsBoolean())
+                return false;
+        }
+        return true;
+    }
 
     public String getRoomStatus() {
         String result = "";
