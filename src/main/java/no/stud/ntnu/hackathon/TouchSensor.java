@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class TouchSensor extends Sensor {
 
-    private String lastTouch;
+    private String lastTouch = null;
     private boolean actionRequired;
 
     public TouchSensor(String sensorName) {
@@ -23,9 +23,13 @@ public class TouchSensor extends Sensor {
         String updateTime = touch.getString("updateTime");
         super.setUpdateTime(updateTime);
         result = updateTime;
-        if (!lastTouch.equals(result)) {
-            actionRequired = true;
-            lastTouch = result;
+        if (lastTouch == null) {
+
+        } else {
+            if (!lastTouch.equals(result)) {
+                actionRequired = true;
+                lastTouch = result;
+            }
         }
         //return json.toString();
         return result;
@@ -37,8 +41,13 @@ public class TouchSensor extends Sensor {
         JSONObject networkStatus = reported.getJSONObject("networkStatus");
         return networkStatus.getInt("signalStrength");
     }
-    public void setActionDone(){
+
+    public void setActionDone() {
         actionRequired = false;
+    }
+
+    public boolean isActionRequired() {
+        return actionRequired;
     }
 
     public int getBatteryStatus() {
