@@ -3,6 +3,7 @@ package no.stud.ntnu.hackathon;
 import java.util.ArrayList;
 
 public class RoomController {
+    private boolean actionRequired = false;
     private ArrayList<Room> rooms;
 
     public RoomController() {
@@ -10,6 +11,15 @@ public class RoomController {
     }
     public void addRoom(String name, String description) {
         rooms.add(new Room(name, description));
+    }
+    public boolean checkForActionRequired(){
+        for (Room room : rooms) {
+            for (TouchSensor touchSensor : room.getTouchSensors()) {
+                if (touchSensor.isActionRequired())
+                    return true;
+            }
+        }
+        return false;
     }
     
     public void addTempSensorToRoom(String roomName, String sensorName){

@@ -706,6 +706,18 @@ kbd:hover img {
   min-height: 100%;
   object-fit: cover;
 }
+.flex-container {
+  display: flex;
+  justify-content: center;
+  background-color: cyan;
+}
+.flex-container > div {
+  width: 25%;
+  margin: 10px;
+  text-align: center;
+  line-height: 55px;
+  font-size: x-large;
+}
 .small-content {
   font-size: small;
 }
