@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RoomController {
     private boolean actionRequired = false;
     private ArrayList<Room> rooms;
-    private ArrayList<Sensor> serviceAlerts;
+    private ArrayList<Room> serviceAlerts;
 
     public RoomController() {
         serviceAlerts = new ArrayList<>();
@@ -24,7 +24,7 @@ public class RoomController {
         return false;
     }
 
-    public ArrayList<Sensor> getServiceAlerts () {
+    public ArrayList<Room> getServiceAlerts () {
         return serviceAlerts;
     }
     

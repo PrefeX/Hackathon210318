@@ -39,7 +39,7 @@ public class MainApp {
             for(Room r : roomController.getRooms()) {
                 for(TouchSensor ts : r.getTouchSensors()) {
                     if(ts.isActionRequired()) {
-                        roomController.getServiceAlerts().add(ts);
+                        roomController.getServiceAlerts().add(r);
                     }
                 }
             }
