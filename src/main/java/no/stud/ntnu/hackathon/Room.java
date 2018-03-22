@@ -18,7 +18,11 @@ public class Room {
         this.name = name;
         this.description = description;
 
-        
+        hasProjector = false;
+        hasMonitor = false;
+        hasConferenceEquipment = false;
+        hasPhone = false;
+        hasWhiteboard = false;
 
         tempSensors = new HashSet<>();
         touchSensors = new HashSet<>();
@@ -27,6 +31,46 @@ public class Room {
 
     public String getName() {
         return name;
+    }
+
+    public String getHasProjector() {
+        if(hasProjector) {
+            return "&#10004;";
+        } else {
+            return "&#10008;";
+        }
+    }
+
+    public String getHasMonitor() {
+        if(hasProjector) {
+            return "&#10004;";
+        } else {
+            return "&#10008;";
+        }
+    }
+
+    public String getHasConferenceEquipment() {
+        if(hasProjector) {
+            return "&#10004;";
+        } else {
+            return "&#10008;";
+        }
+    }
+
+    public String getHasPhone() {
+        if(hasProjector) {
+            return "&#10004;";
+        } else {
+            return "&#10008;";
+        }
+    }
+
+    public String getHasWhiteboard() {
+        if(hasProjector) {
+            return "&#10004;";
+        } else {
+            return "&#10008;";
+        }
     }
 
     public void addTempSensor(TempSensor sensor) {
