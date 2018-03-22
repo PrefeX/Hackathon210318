@@ -687,7 +687,7 @@ kbd:hover img {
   opacity: 1;
 }
 .unavailible {
-  color: #a5151c;
+  color: #d21b24;
 }
 .availible {
   color: #00935c;
@@ -705,6 +705,9 @@ kbd:hover img {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
+}
+.small-content {
+  font-size: small;
 }
 /*
 @media print {
@@ -724,5 +727,6 @@ kbd:hover img {
         padding: 0;
         image-scale-shadow: none;
     }
+	
 }
 */
