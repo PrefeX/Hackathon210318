@@ -21,6 +21,7 @@ body {
     color: @color-font;
 }
 
+
 header,
 main {
     background: @color-background;
@@ -67,25 +68,33 @@ h6 {
 //---------------------------------------------------
 // START OF CODE
 //---------------------------------------------------
-.container {
-    background-color: black;
+
+
+.unavailible {
+    color: @color-red;
 }
 
-.row {
-    background-color: red;
+.availible {
+    color: @color-green;
 }
 
 .padding-10 {
     padding: 10px;
 }
 
-.room-image {
+
+.image-scale {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
-        object-fit: cover !important;
-        width: 100%;
-        height: 100%;
-    }
-}
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+  }
+
 
 
 //---------------------------------------------------
@@ -103,12 +112,13 @@ h6 {
     }
     main {
         background: none;
-        box-shadow: none;
+        image-scale-shadow: none;
     }
     main > section {
         flex: auto;
         padding: 0;
-        box-shadow: none;
+        image-scale-shadow: none;
     }
+	
 }
 */

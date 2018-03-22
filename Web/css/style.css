@@ -686,19 +686,25 @@ kbd img {
 kbd:hover img {
   opacity: 1;
 }
-.container {
-  background-color: black;
+.unavailible {
+  color: #a5151c;
 }
-.row {
-  background-color: red;
+.availible {
+  color: #00935c;
 }
 .padding-10 {
   padding: 10px;
 }
-.room-image img {
-  object-fit: cover !important;
-  width: 100%;
-  height: 100%;
+.image-scale {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-scale img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }
 /*
 @media print {
@@ -711,12 +717,12 @@ kbd:hover img {
     }
     main {
         background: none;
-        box-shadow: none;
+        image-scale-shadow: none;
     }
     main > section {
         flex: auto;
         padding: 0;
-        box-shadow: none;
+        image-scale-shadow: none;
     }
 }
 */
