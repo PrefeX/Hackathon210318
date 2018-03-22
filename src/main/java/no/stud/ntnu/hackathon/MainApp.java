@@ -25,13 +25,17 @@ public class MainApp {
         roomController.addTempSensorToRoom("room", "Team 1 Temp 2");
         roomController.addTouchSensorToRoom("room", "Team 1 Touch");
         roomController.addProxSensorToRoom("room", "Team 1 Prox");
+        roomController.addProxSensorToRoom("room", "Team 2 Prox");
         roomController.addProxSensorToRoom("room2", "Team 1 Prox 2");
+        roomController.addProxSensorToRoom("room2", "Team 3 Prox");
 
         while(true) {
             updateAllTempSensors(roomController.getRoomFromName("room").getTempSensors());
             updateAllTouchSensors(roomController.getRoomFromName("room").getTouchSensors());
             updateAllProxSensors(roomController.getRoomFromName("room").getProxSensors());
             System.out.println(roomController.getRoomFromName("room").getRoomStatus());
+            updateAllProxSensors(roomController.getRoomFromName("room2").getProxSensors());
+            System.out.println(roomController.getRoomFromName("room2").getRoomStatus());
         }
     }
 
