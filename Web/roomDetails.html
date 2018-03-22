@@ -8,6 +8,7 @@
     <title>Welcome to room manager 3000!</title>
     <link rel="shortcut icon" type="image/png" href="img/Rooms.png">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.less" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -96,6 +97,32 @@
         </footer>
 
     </main>
+
+
+
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ["13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00"],
+                datasets: [{
+                    label: "Temperature",
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [21, 18, 15, 18, 19, 23, 28],
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+
 
 
     <!-- START: Bootstrap JS -->
