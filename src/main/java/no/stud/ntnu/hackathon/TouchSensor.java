@@ -4,10 +4,11 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.time.Instant;
 
 public class TouchSensor extends Sensor {
 
-    private String lastTouch = null;
+    private java.util.Date lastTouch = null;
     private boolean actionRequired;
 
     public TouchSensor(String sensorName) {
@@ -23,12 +24,16 @@ public class TouchSensor extends Sensor {
         String updateTime = touch.getString("updateTime");
         super.setUpdateTime(updateTime);
         result = updateTime;
+        String input = result;
+        Instant instant = Instant.parse(input);
+        java.util.Date date = java.util.Date.from(instant);
+        
         if (lastTouch == null) {
 
         } else {
-            if (!lastTouch.equals(result)) {
+            if (!lastTouch.equals(date)) {
                 actionRequired = true;
-                lastTouch = result;
+                lastTouch = date;
             }
         }
         return device.toString();
