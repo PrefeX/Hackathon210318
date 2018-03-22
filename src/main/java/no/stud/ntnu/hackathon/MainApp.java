@@ -32,6 +32,13 @@ public class MainApp {
             updateAllTouchSensors(roomController.getRoomFromName("room").getTouchSensors());
             updateAllProxSensors(roomController.getRoomFromName("room").getProxSensors());
             System.out.println(roomController.getRoomFromName("room").getRoomStatus());
+            for(Room r : roomController.getRooms()) {
+                for(TouchSensor ts : r.getTouchSensors()) {
+                    if(ts.isActionRequired()) {
+                        roomController.getServiceAlerts().add(ts);
+                    }
+                }
+            }
         }
     }
 

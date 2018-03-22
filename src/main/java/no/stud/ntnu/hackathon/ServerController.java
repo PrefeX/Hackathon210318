@@ -31,7 +31,7 @@ public class ServerController {
         return "conferenceRooms";
     }
     @GetMapping("/index")
-    public String yolo(Model model) {
+    public String index(Model model) {
         model.addAttribute("index", roomController);
         return "index";
     }

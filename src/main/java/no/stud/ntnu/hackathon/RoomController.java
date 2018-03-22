@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class RoomController {
     private boolean actionRequired = false;
     private ArrayList<Room> rooms;
-    private ArrayList<Sensor> serviceSensors;
+    private ArrayList<Sensor> serviceAlerts;
 
     public RoomController() {
-        serviceSensors = new ArrayList<>();
+        serviceAlerts = new ArrayList<>();
         rooms = new ArrayList<>();
     }
     public void addRoom(String name, String description) {
@@ -22,6 +22,10 @@ public class RoomController {
             }
         }
         return false;
+    }
+
+    public ArrayList<Sensor> getServiceAlerts () {
+        return serviceAlerts;
     }
     
     public void addTempSensorToRoom(String roomName, String sensorName){
