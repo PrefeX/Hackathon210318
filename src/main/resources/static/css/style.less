@@ -1,21 +1,13 @@
 @import "variables.less";
-
-
 //---------------------------------------------------
 // User Variables
 //---------------------------------------------------
-
 @color-primary: @color-teal;
-
-
 //---------------------------------------------------
 // Fixed Variables, don't change!
 //---------------------------------------------------
-
 @color-primary-light: lighten(@color-primary, 10%);
 @color-primary-dark: darken(@color-primary, 10%);
-
-
 //---------------------------------------------------
 // Generic settings, fixes & overrides
 //---------------------------------------------------
@@ -28,6 +20,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     color: @color-font;
 }
+
 
 header,
 main {
@@ -72,20 +65,40 @@ h6 {
 }
 
 @import "ui-elements.less";
-
-
 //---------------------------------------------------
 // START OF CODE
 //---------------------------------------------------
 
 
-.container {
-	background-color: black;
+.unavailible {
+    color: @color-red-light;
 }
 
-.row {
-background-color: red;
+.availible {
+    color: @color-green;
 }
+
+.padding-10 {
+    padding: 10px;
+}
+
+
+.image-scale {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+  }
+
+  .small-content {
+      font-size: small;
+  }
+
 
 
 //---------------------------------------------------
@@ -103,12 +116,13 @@ background-color: red;
     }
     main {
         background: none;
-        box-shadow: none;
+        image-scale-shadow: none;
     }
     main > section {
         flex: auto;
         padding: 0;
-        box-shadow: none;
+        image-scale-shadow: none;
     }
+	
 }
 */

@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Handling Form Submission</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Welcome to room manager 3000!</title>
@@ -10,8 +9,9 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" th:href="@{css/style.less}" />
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300|Lora|Ubuntu" rel="stylesheet"/>
 </head>
 <body>
 <header class="container-fluid text-center padding-10">
@@ -19,25 +19,80 @@
 </header>
 
 <main class="container-fluid">
+    <table width="100%">
+        <thead>
+        <tr>
+            <th class="text-left">Tilgjengelige konferanserom</th>
+        </tr>
+        </thead>
+        <tbody>
 
-    <section class="row" th:each="room : ${conferenceRooms.getRooms()}">
-        <div class="col-sm-2">
-            <img th:src="@{image/pexels-photo-306198.jpeg}" alt="" width="100%"/>
-        </div>
+        <tr th:each="room : ${conferenceRooms.getRooms()}">
+            <td class="text-left">
+                <section class="row">
+                    <div class="col-sm-2 image-scale">
+                        <img th:src="@{image/pexels-photo-306198.jpeg}" alt="" width="100%"/>
+                    </div>
 
-        <div class="col-sm-8">
-            <h2>Rom-nummer: Status</h2>
-            <ul>
-                <li th:text="${room.getHasProjector()}"> Prosjektor</li>
-                <li>&#10004; Monitor</li>
-                <li>&#10004; Konferanseutstyr</li>
-                <li>&#10008; Telefon</li>
-                <li>&#10004; Whiteboard</li>
-            </ul>
-        </div>
-    </section>
+                    <div class="col-sm-8">
+                        <h3>Aksla Konferanserom: <span class="availible">Ledig</span></h3>
+                        Ledige plasser: 10 av 10
+                        <br/>Neste reservasjon: 18:00
+                        <br/>Fasiliteter:
+                        <ul class="small-content">
+                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Prosjektor</li>
+                            <li><span class="availible" th:text="${room.getHasProjector()}">&#10004;</span> Monitor</li>
+                            <li><span class="availible" th:text="${room.getHasProjector()}">&#10004;</span> Konferanseutstyr</li>
+                            <li><span class="unavailible" th:text="${room.getHasProjector()}">&#10008;</span> Telefon</li>
+                            <li><span class="availible" th:text="${room.getHasProjector()}">&#10004;</span> Whiteboard</li>
+                        </ul>
+                        <button class="btn-themed">Reserver rom</button>
+                    </div>
+                </section>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
+    <br/>
+
+    <table width="100%">
+        <thead>
+        <tr>
+            <th class="text-left">Opptatte konferanserom</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="room : ${conferenceRooms.getRooms()}">
+            <td class="text-left">
+                <section class="row">
+                    <div class="col-sm-2 image-scale">
+                        <img th:src="@{image/pexels-photo-306198.jpeg}" alt="" width="100%"/>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <h3>Aksla Konferanserom: <span class="availible">Ledig</span></h3>
+                        Ledige plasser: 10 av 10
+                        <br/>Neste reservasjon: 18:00
+                        <br/>Fasiliteter:
+                        <ul class="small-content">
+                            <li><span class="availible" th:text="${room.getHasProjector()}"></span>Prosjektor</li>
+                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Monitor</li>
+                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Konferanseutstyr</li>
+                            <li><span class="unavailible" th:text="${room.getHasProjector()}"></span> Telefon</li>
+                            <li><span class="availible" th:text="${room.getHasProjector()}"></span> Whiteboard</li>
+                        </ul>
+                        <button class="btn-themed">Reserver rom</button>
+                    </div>
+                </section>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </main>
+
+
 
 
 <!-- START: Bootstrap JS -->

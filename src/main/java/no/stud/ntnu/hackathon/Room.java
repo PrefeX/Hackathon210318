@@ -35,17 +35,17 @@ public class Room {
 
     public String getHasProjector() {
         if(hasProjector) {
-            return "&#10004;";
+            return "✔";
         } else {
-            return "&#10008;";
+            return "✘";
         }
     }
 
     public String getHasMonitor() {
         if(hasProjector) {
-            return "&#10004;";
+            return "✔";
         } else {
-            return "&#10008;";
+            return "✘";
         }
     }
 
