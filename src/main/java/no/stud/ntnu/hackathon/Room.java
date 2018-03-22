@@ -115,6 +115,16 @@ public class Room {
         }
         return result;
     }
+    public int getNumberOfAvailableChairs(){
+        int result = 0;
+        result = proxSensors.stream().filter((proxSensor) -> (proxSensor.getStateAsBoolean())).map((_item) -> 1).reduce(result, Integer::sum);
+        return result;
+    }
+    public int getNumberOfChairs(){
+        int result = 0;
+        result = proxSensors.stream().map((_item) -> 1).reduce(result, Integer::sum);
+        return result;
+    }
 
 
 }
