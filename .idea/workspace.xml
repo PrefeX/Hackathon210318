@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cf1bfca-458a-4e9c-abd2-600902ee4b64" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/Room.java" afterPath="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/Room.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,21 +58,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conferenceRooms.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="conferenceRooms.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="429">
+              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="695">
+              <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -90,8 +91,8 @@
       <file leaf-file-name="roomController.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/roomController.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="16" column="82" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="82" />
+            <state relative-caret-position="561">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -111,10 +112,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/RoomController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="825">
-              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding>
-                <element signature="e#827#828#0" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1442#1443#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,9 +186,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/roomController.html" />
         <option value="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/RoomController.java" />
         <option value="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/ServerController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html" />
         <option value="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/MainApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/Room.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html" />
       </list>
     </option>
   </component>
@@ -523,7 +524,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46878000" />
+    <option name="totallyTimeSpent" value="47355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
@@ -894,14 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/roomController.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="16" column="82" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/ServerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -915,10 +908,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/RoomController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding>
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -931,18 +924,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/Room.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="28" />
+        <state relative-caret-position="695">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/no/stud/ntnu/hackathon/Room.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/roomController.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="561">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/conferenceRooms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
           <folding />
         </state>
       </provider>
