@@ -31,8 +31,8 @@ public class TouchSensor extends Sensor {
                 lastTouch = result;
             }
         }
-        //return json.toString();
-        return result;
+        return device.toString();
+        //return result;
     }
 
     public int getSignalStrength() {

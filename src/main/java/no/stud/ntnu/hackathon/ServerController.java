@@ -19,6 +19,12 @@ public class ServerController {
         return "greeting";
     }
 
+    @GetMapping("/serviceRequests")
+    public String serviceRequests(Model model) {
+        model.addAttribute("serviceRequests", roomController);
+        return "serviceRequests";
+    }
+
     @GetMapping("/roomController")
     public String roomController(Model model) {
         model.addAttribute("roomController", roomController);
