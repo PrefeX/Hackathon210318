@@ -22,30 +22,30 @@
     </header>
 
 
-    <main class="container-fluid text-center">
-        <div class="row">
+    <main class="container-fluid text-center testing">
+        <div class="row testing">
 
             <div class="col-sm-4">
-                <a href="conferenceRooms.html"><button class="btn-themed btn-xxlarge">Romoversikt</button></a>
+                <a href="conferenceRooms.html"><button class="btn-themed btn-xxlarge btn-block">Romoversikt</button></a>
             </div>
 
             <div class="col-sm-4">
-                <a href="#"><button class="btn-themed btn-xxlarge">Rombestilling</button></a>
+                <a href="#"><button class="btn-themed btn-xxlarge btn-block">Rombestilling</button></a>
             </div>
 
             <div class="col-sm-4">
-                <a href="#"><button class="btn-themed btn-xxlarge">swagz for now</button></a>
+                <a href="#"><button class="btn-themed btn-xxlarge btn-block">Arbeidsstasjoner</button></a>
             </div>
 			
 			<div class="col-sm-4">
-                <a href="#"><button class="btn-themed btn-xxlarge">Statistics</button></a>
+                <a href="#"><button class="btn-themed btn-xxlarge btn-block">Statistics</button></a>
             </div>
 			
 			<div class="col-sm-4" th:unless="${index.getServiceAlerts().isEmpty()}">
-                <a href="serviceRequests.html" ><button class="btn-themed btn-xxlarge">Servicecall</button></a>
+                <a href="serviceRequests.html" ><button class="btn-themed btn-xxlarge btn-block">Servicecall</button></a>
             </div>
             <div class="col-sm-4" th:if="${index.getServiceAlerts().isEmpty()}">
-                <a href="serviceRequests.html" ><button class="btn-themed btn-xxlarge" style="background-color: red;">Servicecall</button></a>
+                <a href="serviceRequests.html" ><button class="btn-themed btn-xxlarge btn-block" style="background-color: red;">Servicecall</button></a>
             </div>
 
 
