@@ -88,9 +88,21 @@
         </tr>
         </tbody>
     </table>
-    <div width="100%" th:if="${conferenceRooms.getAvailableRooms().isEmpty()}">
-        There is no unavailable rooms
-    </div>
+    <table width="100%" th:if="${conferenceRooms.getAvailableRooms().isEmpty()}">
+        <thead>
+        <tr>
+            <th class="text-left">Ledige konferanserom</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td class="text-left">
+                Ingen ledige rom
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
     <br/>
 
