@@ -1,56 +1,49 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Welcome to room manager 3000!</title>
-    <link rel="shortcut icon" type="image/png" th:href="@{image.Rooms.png}">
+    <link rel="shortcut icon" type="image/png" th:href="@{image/Rooms.png}"/>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" th:href="@{css/style.less}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.less}" />
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous"/>
 </head>
-
 <body>
+<header class="container-fluid text-center padding-10">
+    <img th:src="@{image/QuickHeader.png}" height="50px"/>
+</header>
 
-    <header class="container-fluid text-center padding-10">
-        <img th:src="@{image/QuickHeader.png}" height="50px"/>
-    </header>
+<main class="container-fluid">
 
+    <section class="row" th:each="room : ${conferenceRooms.getRooms()}">
+        <div class="col-sm-2">
+            <img th:src="@{image/pexels-photo-306198.jpeg}" alt="" width="100%"/>
+        </div>
 
-    <main class="container-fluid">
+        <div class="col-sm-8">
+            <h2>Rom-nummer: Status</h2>
+            <ul>
+                <li>&#10004; Prosjektor</li>
+                <li>&#10004; Monitor</li>
+                <li>&#10004; Konferanseutstyr</li>
+                <li>&#10008; Telefon</li>
+                <li>&#10004; Whiteboard</li>
+            </ul>
+        </div>
+    </section>
 
-        <section class="row">
-            <div class="col-sm-2">
-                <img src="img/pexels-photo-306198.jpeg" alt="" width="100%">
-            </div>
-
-            <div class="col-sm-8">
-                <h2>Rom-nummer: Status</h2>
-                Ledige plasser: x av x
-                <br> Tilgjengelig utstyr:
-                <ul>
-                    <li>&#10004; Prosjektor</li>
-                    <li>&#10004; Monitor</li>
-                    <li>&#10004; Konferanseutstyr</li>
-                    <li>&#10008; Telefon</li>
-                    <li>&#10004; Whiteboard</li>
-                </ul>
-            </div>
-        </section>
-
-    </main>
+</main>
 
 
-    <!-- START: Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- END: Bootstrap JS -->
-
+<!-- START: Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- END: Bootstrap JS -->
 </body>
-
 </html>

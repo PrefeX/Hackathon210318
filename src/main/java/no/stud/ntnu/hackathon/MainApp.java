@@ -20,11 +20,12 @@ public class MainApp {
         sensors = new ArrayList<>();
 
         roomController.addRoom("room", "Best room available");
+        roomController.addRoom("room2", "Best room available 2");
         roomController.addTempSensorToRoom("room", "Team 1 Temp");
         roomController.addTempSensorToRoom("room", "Team 1 Temp 2");
         roomController.addTouchSensorToRoom("room", "Team 1 Touch");
         roomController.addProxSensorToRoom("room", "Team 1 Prox");
-        roomController.addProxSensorToRoom("room", "Team 1 Prox2");
+        roomController.addProxSensorToRoom("room", "Team 1 Prox 2");
 
         while(true) {
             updateAllTempSensors(roomController.getRoomFromName("room").getTempSensors());

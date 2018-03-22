@@ -7,9 +7,19 @@ public class Room {
     private HashSet<TouchSensor> touchSensors;
     private HashSet<ProxSensor> proxSensors;
     private String name;
+    private String description;
+    private boolean hasProjector;
+    private boolean hasMonitor;
+    private boolean hasConferenceEquipment;
+    private boolean hasPhone;
+    private boolean hasWhiteboard;
 
     public Room (String name, String description) {
         this.name = name;
+        this.description = description;
+
+        
+
         tempSensors = new HashSet<>();
         touchSensors = new HashSet<>();
         proxSensors = new HashSet<>();
@@ -54,4 +64,6 @@ public class Room {
         }
         return result;
     }
+
+
 }

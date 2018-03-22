@@ -21,7 +21,10 @@ public class RoomController {
     public void addTouchSensorToRoom(String roomName, String sensorName){
         getRoomFromName(roomName).addTouchSensor(new TouchSensor(sensorName));
     }
-    
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
 
     public Room getRoomFromName(String name) {
         for(Room room : rooms) {
