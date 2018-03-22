@@ -13,6 +13,8 @@ public class Room {
     private boolean hasConferenceEquipment;
     private boolean hasPhone;
     private boolean hasWhiteboard;
+    private String roomPicture = "/rooms/placeholder.png";
+    private String floorPlanDrawing = "/rooms/placeholder.png";
 
     public Room (String name, String description) {
         this.name = name;
@@ -31,6 +33,18 @@ public class Room {
 
     public String getName() {
         return name;
+    }
+    public String getRoomPicture(){
+        return this.roomPicture;
+    }
+    public void setRoomPicture(String location){
+        this.roomPicture = location;
+    }
+    public String getFloorPlanDrawing(){
+        return this.floorPlanDrawing;
+    }
+    public void setFloorPlanDrawing(String location){
+        this.floorPlanDrawing = location;
     }
 
     public String getHasProjector() {
